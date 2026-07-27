@@ -14,6 +14,7 @@
         <h1>Welcome {{ name }}</h1>
         <p>Your age is {{ age }}</p>
         <p>Your position is {{ position }}</p>
+        <p>Your email is {{ email }}</p>
         <h2>{{ sayHello() }}</h2>
         <!-- to binding the link to the anchor tag or src use v-bind:href="link" or :href="link" -->
         <a class="btn btn-primary" :href="link" target="_blank">click here</a>
@@ -27,7 +28,21 @@
         <br>
         <!-- Use .once to execute the click handler only once -->
         <button @click.once="doOnetime">One Time</button>
+        <br>
+        <input type="text" @keyup="printmyname">
+        <input type="text" @keyup.enter="printmyname">
+        <!-- if you need to use enter key to print the name use @keyup.enter="printmyname" -->
+        <input type="text" @keyup.alt.enter="printmyname">
+        <!-- if you need to use alt and enter key to print the name use @keyup.alt.enter="printmyname" -->
 
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" v-model="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" v-model="email">
+        </div>
 
 
     </div>

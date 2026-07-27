@@ -5,6 +5,7 @@ createApp({
         return {
             name: 'yasmeen',
             age: 30,
+            email: 'yasmeen@gmail.com',
             position: 'full stack developer',
             link: 'https://www.google.com',
             number: 0,
@@ -30,5 +31,9 @@ createApp({
             console.log("this is a one time method");
             alert("this is a one time method");
         },
+        printmyname(){
+            console.log(this.name);
+
+        }
     }
 }).mount('#app-root');
