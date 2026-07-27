@@ -3,10 +3,14 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            name: 'yasmeen',
-            age: 30,
-            email: 'yasmeen@gmail.com',
-            position: 'full stack developer',
+            newuser: {
+                name: '',
+                age: 30,
+                email: '',
+                password: '',
+                confirmPassword: '',
+                position: 'full stack developer',
+            },
             link: 'https://www.google.com',
             number: 0,
         }
@@ -22,18 +26,23 @@ createApp({
             this.number++;
         },
 
-        dontwork(){
+        dontwork() {
             // return 'this is not a method';
             console.log('this is not a method');
 
         },
-        doOnetime(){
+        doOnetime() {
             console.log("this is a one time method");
             alert("this is a one time method");
         },
-        printmyname(){
+        printmyname() {
             console.log(this.name);
 
-        }
+        },
+
+        sendData() {
+            return this.newuser;
+        },
+
     }
 }).mount('#app-root');
