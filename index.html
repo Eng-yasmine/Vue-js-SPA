@@ -71,8 +71,9 @@
                 <h2>the number is {{ incrementNumber }}</h2>
             </div>
             <div>
-                <button @click="number2--"> -</button>
-                <h2>the number is {{ decrementNumber }}</h2>
+                <button v-model="mycolor" @click="number2--"> -</button>
+                <h2 :style="{color: mycolor}">the number is {{ decrementNumber }}</h2>
+
             </div>
         </div>
 

@@ -14,6 +14,7 @@ createApp({
             link: 'https://www.google.com',
             number1: 0,
             number2: 0,
+            mycolor: 'red',
 
         }
 
