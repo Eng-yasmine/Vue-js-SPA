@@ -75,6 +75,11 @@
                 <h2 :style="{color: mycolor}">the number is {{ decrementNumber }}</h2>
 
             </div>
+
+            <h2 v-if="age < 25">my age is younger than 25</h2>
+            <h2 v-else-if="age > 25">my age is older than 25</h2>
+            <h2 v-else="age === 25">my age is equal to 25</h2>
+            <button @click="age+=1">increment age</button>
         </div>
 
     </div>
