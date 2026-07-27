@@ -12,7 +12,9 @@ createApp({
                 position: 'full stack developer',
             },
             link: 'https://www.google.com',
-            number: 0,
+            number1: 0,
+            number2: 0,
+
         }
 
     },
@@ -44,5 +46,14 @@ createApp({
             return this.newuser;
         },
 
+    },
+
+    computed: {
+        incrementNumber() {
+            return this.number1 * 2;
+        },
+        decrementNumber() {
+            return this.number2 *5;
+        },
     }
 }).mount('#app-root');

@@ -43,7 +43,7 @@
             <label for="email">Email</label>
             <input type="text" id="email" v-model="newuser.email">
         </div>
-<br>
+        <br>
         <form action="" @submit.prevent="sendData">
 
             <div>
@@ -65,7 +65,16 @@
 
             <button type="submit">Submit</button>
         </form>
-
+        <div>
+            <div>
+                <button @click="number1++"> +</button>
+                <h2>the number is {{ incrementNumber }}</h2>
+            </div>
+            <div>
+                <button @click="number2--"> -</button>
+                <h2>the number is {{ decrementNumber }}</h2>
+            </div>
+        </div>
 
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
