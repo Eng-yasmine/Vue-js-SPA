@@ -1,16 +1,16 @@
 const { createApp } = Vue;
 
-createApp({
+ const vue_1 = createApp({
   data() {
     return {
       newuser: {
-        name: "",
+        name: "yasmeen from root1",
         age: 30,
         email: "",
         password: "",
         confirmPassword: "",
         position: "full stack developer",
-      },
+    },
       link: "https://www.google.com",
       number1: 0,
       number2: 0,
@@ -72,3 +72,20 @@ createApp({
     },
   },
 }).mount("#app-root");
+
+
+/* to use instance in other define it as a variables */
+ const vue_2 = createApp({
+  data() {
+    return {
+      name: "yasmeen from root 2",
+    };
+  },
+
+  methods:{
+    changeName(){
+        vue_1.newuser.name = 'yasmeen name has been changed';
+        this.name = vue_1.newuser.name ;
+    }
+  }
+}).mount("#app-root2");
