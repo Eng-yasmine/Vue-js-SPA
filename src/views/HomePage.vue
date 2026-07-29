@@ -1,10 +1,7 @@
 <template>
     <div class="my-main">
     <MyNav />
-    <h1>this is my main page</h1>
-    
-    
-    
+   
     </div>
 
 
