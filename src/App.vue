@@ -1,15 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import MyNav from './components/MyNav.vue'
 </script>
 
 <template>
-  <header>
-
-  </header>
-<RouterView />
-
+  <!-- الناف هنا عشان تظهر في كل الصفحات مش في صفحة واحدة بس -->
+  <MyNav />
+  <main class="page-content">
+    <RouterView />
+  </main>
 </template>
 
 <style>
-
+.page-content {
+  /* مسافة تحت الناف الثابت عشان المحتوى مش يتغطى */
+  padding-top: 100px;
+}
 </style>

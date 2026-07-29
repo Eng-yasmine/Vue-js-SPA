@@ -1,20 +1,12 @@
 <template>
-    <div class="my-main">
-    <MyNav />
+  <div class="my-main">
    
-    </div>
-
-
+    <p>الصفحة الرئيسية</p>
+  </div>
 </template>
+
 <script>
-import MyNav from '../components/MyNav.vue';
-export default{
-name:'MyMain',
-components:{
-MyNav,
-
+export default {
+  name: 'HomePage',
 }
-
-}
-
 </script>
