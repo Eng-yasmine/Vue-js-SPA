@@ -59,6 +59,9 @@ export default {
   width: 100%;
   height: 100px;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; /* الناف فوق المحتوى دايمًا */
 }
 
 .site-name {

@@ -3,32 +3,45 @@
   <header>
     <div>
 
-      <h1>This is main Header</h1>
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
 
-      <p>lorem</p>
+      
     </div>
   </header>
 </template>
 
 <script>
 export default{
-data(){
-  return{
-
-  }
+props: {
+title: {
+ type: string ,
+ required: true,
+ },
+ description: {
+  type: string ,
+  required: true,
+ },
 }
+}
+
+data(){
+return {}
+},
 
 }
 
 </script>
 
 
-<style scoped lang="scss">
-header{
-  width:100%;
-  padding : 3rem;
+<!--
+  شيلنا lang="scss" عشان الخطأ يختفي.
+  السبب: lang="scss" محتاج مكتبة sass-embedded، وهي مش متسطّبة.
+  الـ CSS هنا عادي ومش محتاج SCSS.
+-->
+<style scoped>
+header {
+  width: 100%;
+  padding: 3rem;
 }
-
-
-
 </style>
