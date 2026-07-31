@@ -1,44 +1,29 @@
 <template>
-
   <header>
     <div>
-
-      <h1>{{title}}</h1>
-      <p>{{description}}</p>
-
-      
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
     </div>
   </header>
 </template>
 
 <script>
-export default{
-props: {
-title: {
- type: string ,
- required: true,
- },
- description: {
-  type: string ,
-  required: true,
- },
+export default {
+  name: 'MyHeader',
+  props: {
+    // مهم: String بحرف كبير (مش string) — ده نوع Vue/JavaScript
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+  },
 }
-}
-
-data(){
-return {}
-},
-
-}
-
 </script>
 
-
-<!--
-  شيلنا lang="scss" عشان الخطأ يختفي.
-  السبب: lang="scss" محتاج مكتبة sass-embedded، وهي مش متسطّبة.
-  الـ CSS هنا عادي ومش محتاج SCSS.
--->
 <style scoped>
 header {
   width: 100%;

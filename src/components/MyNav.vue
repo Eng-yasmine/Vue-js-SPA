@@ -1,6 +1,6 @@
 <template>
   <nav class="my-nav">
-    <div class="site-name">{{ name }}</div>
+    <div class="site-name">{{ siteName }}</div>
     <div class="menu">
       <ul>
         <!--
@@ -8,19 +8,19 @@
           - to = مسار الصفحة من الراوتر
           - كده اللينك يبقى قابل للضغط وينقل بدون ريلود كامل للصفحة
           -->
-          <li v-for="link in menu" :key="link.path">
-            <RouterLink :to="link.path">{{ link.label }}</RouterLink>
-          </li>
-        </ul>
-      </div>
-      <!--
+        <li v-for="link in menuLinks" :key="link.path">
+          <RouterLink :to="link.path">{{ link.label }}</RouterLink>
+        </li>
+      </ul>
+    </div>
+    <!--
         لعرض أيقونة: استخدم <img> مش {{ }}
         {{ icone }} = هتكتب المسار كنص على الشاشة
         <img :src="icone"> = هتعرض الصورة نفسها
       -->
-      <div class="site_icone">
-        <img :src="icone" alt="cart" />
-      </div>
+    <div class="site_icone">
+      <img :src="icone" alt="cart" />
+    </div>
   </nav>
 </template>
 
@@ -29,16 +29,26 @@
 import cartIcon from '../assets/shopping-cart.png'
 
 export default {
-  data() {
-    return {
-      name: 'audiophile',
+  name: 'MyNav',
+  props: {
+    /*  دي الprimitive*/
+    siteName: {
+      type: String,
+      required: true,
+    },
+    menuLinks: {
+      type: Array,
+      required: true,
+    },
+  },
+  data(){
+    return{
+      /*    هنخلي الايقون محليه مؤقتا */
       icone: cartIcon,
-      menu: [
-        { label: 'home', path: '/' },
-        { label: 'about', path: '/about' },
-        { label: 'service', path: '/service' },
-      ],
     }
+  },
+  created(){
+
   },
 }
 </script>
@@ -107,16 +117,16 @@ a {
   text-decoration: none;
   overflow: hidden;
   z-index: 1;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 a::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: #e87f7f; /* اللون اللي هينزل */
   transform: translateY(-100%);
-  transition: transform .35s ease;
+  transition: transform 0.35s ease;
   z-index: -1;
 }
 
@@ -127,5 +137,4 @@ a:hover::before {
 a:hover {
   color: white;
 }
-
 </style>

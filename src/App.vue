@@ -1,18 +1,6 @@
-<script setup>
-import { RouterView } from 'vue-router'
-import MyNav from './components/MyNav.vue'
-import MyHeader from './components/MyHeader.vue'
-</script>
-
 <template>
-  <MyNav />
+  <MyNav :site-name="siteName" :menu-links="menuLinks" />
 
-  <!--
-    ليه الهيدر كان متغطي؟
-    الناف position: fixed → طالعة من تدفق الصفحة وبتغطي اللي تحتها من فوق.
-    padding-top كان على main بس، والهيدر برا main فبدأ من أول الشاشة ورا الناف.
-    الحل: ندي المسافة دي لكل المحتوى اللي تحت الناف (هيدر + صفحات).
-  -->
   <div class="page-body">
     <MyHeader title="This is main Header" description="lorem" />
     <main>
@@ -20,6 +8,38 @@ import MyHeader from './components/MyHeader.vue'
     </main>
   </div>
 </template>
+
+<script>
+import { RouterView } from 'vue-router'
+import MyNav from './components/MyNav.vue'
+import MyHeader from './components/MyHeader.vue'
+import cartIcon from './assets/shopping-cart.png'
+
+export default {
+  name: 'App',
+  components: {
+    RouterView,
+    MyNav,
+    MyHeader,
+  },
+  data() {
+    return {
+      // Primitive = String (نسخة قيمة)
+      siteName: 'My Shop',
+
+      // Reference = Array of Objects (مرجع)
+      menuLinks: [
+        { label: 'home', path: '/' },
+        { label: 'about', path: '/about' },
+        { label: 'service', path: '/service' },
+      ],
+
+      // هنبعتها للناف كمان (الصورة Reference للملف، بس المسار بيتعامل كقيمة للـ src)
+      cartIcon,
+    }
+  },
+}
+</script>
 
 <style>
 * {
@@ -29,7 +49,6 @@ import MyHeader from './components/MyHeader.vue'
 }
 
 .page-body {
-  /* نفس ارتفاع الناف (100px) عشان المحتوى يبدأ تحته مش وراه */
   padding-top: 100px;
 }
 </style>
