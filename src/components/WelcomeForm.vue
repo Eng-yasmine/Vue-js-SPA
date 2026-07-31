@@ -2,7 +2,7 @@
   <div class="welcome-form">
     <label for="vistor-name"> enter your nam</label>
     <input
-      id="visitor-name"
+      id="vistor-name"
       type="text"
       :value="inputValue"
       @input="onInput"
